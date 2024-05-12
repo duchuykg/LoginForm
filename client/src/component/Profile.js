@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { loginGithub } from "../api/loginGithub";
 
 const Profile = () => {
   const user_data = JSON.parse(localStorage.getItem("user_data"))
@@ -20,12 +19,20 @@ const Profile = () => {
 
 
   if (!user_data) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading">
+        Loading...
+      </div>
+    );
   }
 
   return (
     <div className="login-form">
-        <h2>Hello {user_data.login} </h2>
+      <div className="content"></div>
+        {user_data.avatar && (
+        <img className="avatar" src={user_data.avatar} alt="Avatar" />
+        )}
+                <h2> {user_data.name ? user_data.name : "Welcome, " + user_data.login + " !"} </h2>
 
         <form onSubmit={handleLogout}>
             <button className={"test"}
