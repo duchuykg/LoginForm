@@ -6,7 +6,7 @@ const userSchema = new Schema(
   {
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    isisConfirmed: { type: Boolean, default: false}
+    isConfirmed: { type: Boolean, default: false}
   },
   {
     collection: "users",

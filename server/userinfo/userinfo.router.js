@@ -4,7 +4,6 @@ const router = webFramework.Router();
 const UserInfoController = require("./userinfo.controller");
 
 // router.post("/register", UserController.register);
-// router.post("/login", UserController.login);
-
+router.get("/", UserInfoController.getUserInfo);
 
 module.exports = router;
