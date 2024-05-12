@@ -63,7 +63,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 30px;
     font-weight: bold;
     
     &.active {
@@ -73,19 +73,53 @@
     };
   }
 
-  /* .login-form button:hover {
+   .test:hover {
     background-color: #d31518;
     color: white;
-  } */
+  } 
 
-  /* .login-form button:active {
-    background-color: #d31518;
+   .test button:active {
+    background-color: #af292b;
     color: white;
-  } */
+  } 
 
 
   button[disabled=disabled], button:disabled{
     cursor: not-allowed;
   }
+  .create-account {
+    text-align: right; 
+    font-size: 12px;
+  }
+
+  .login-github {
+    text-align: center; 
+    font-size: 12px;
+  }
+
+  .login-github-link {
+    color: inherit; 
+    font-weight: bold;
+    text-decoration: none; 
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .create-account-link {
+    color: inherit; 
+    font-weight: bold;
+    text-decoration: none; 
+    text-align: right;
+  }
+
+  .create-account-link:hover {
+    text-decoration: none; 
+    color: inherit; 
+  }
+
+  .active-clicked {
+    background-color: blue;
+  }
+  
 
 }
