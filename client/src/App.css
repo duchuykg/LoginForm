@@ -1,0 +1,91 @@
+.App-container {
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    padding: 20px;
+  }
+
+  .login-form h2 {
+    font-size: 32px;
+    font-family: TikTokDisplayFont;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .login-form form {
+    width: 363px;
+    margin-top: 20px;
+  }
+
+  .login-form .form-group {
+    margin-bottom: 10px;
+    position: relative;
+
+  }
+
+
+  .login-form input {
+    width: 100%;
+    padding: 13px; 
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+    background-color: rgba(22, 24, 35, 0.06); 
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: center;
+  }
+
+  .login-form input::placeholder {
+    opacity: 0.5;
+  }
+
+  .login-form .show-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+    color: rgba(22, 24, 35, 0.34);
+  }
+
+  .login-form button {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    background-color: rgba(22, 24, 35, 0.06);
+    color: rgba(22, 24, 35, 0.34);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-weight: bold;
+    
+    &.active {
+      background-color: #c20505;
+      color: white;
+  
+    };
+  }
+
+  /* .login-form button:hover {
+    background-color: #d31518;
+    color: white;
+  } */
+
+  /* .login-form button:active {
+    background-color: #d31518;
+    color: white;
+  } */
+
+
+  button[disabled=disabled], button:disabled{
+    cursor: not-allowed;
+  }
+
+}

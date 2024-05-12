@@ -1,0 +1,1 @@
+export const LINK_SERVER = "http://localhost:4000"
