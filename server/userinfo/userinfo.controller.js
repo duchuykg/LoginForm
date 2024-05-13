@@ -1,12 +1,18 @@
 const userInfoModel = require('./userinfo.model');
-
+const jwt = require("jsonwebtoken");
 class UserInfoController {
   async getUserInfo(req, res) {
-    console.log(req.query);
-    const { email } = req.query;
-
     try {
-      const user = await userInfoModel.findOne({ login: email });
+      const token = await req.headers.authorization.split(" ")[1]
+
+      if (!token) {
+        return res.status(401).json({
+          error: "Missing token",
+        });
+      }
+      const decodedToken = await jwt.verify(token, "RANDOM-TOKEN");
+      
+      const user = await userInfoModel.findOne({ login: decodedToken.userEmail });
 
       if (!user) {
         return res.status(404).json({ error: 'User not found' });

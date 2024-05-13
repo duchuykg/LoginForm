@@ -22,7 +22,7 @@ const LoginForm = () => {
     try {
       const res = await loginAPI(email, password);
       localStorage.setItem("token", res.data.token);
-      const user = await getUser(res.data.email);
+      const user = await getUser(res.data.token);
       localStorage.setItem("user_data", JSON.stringify(user.user));
       window.location.reload();
     } catch (error) {

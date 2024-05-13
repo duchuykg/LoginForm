@@ -9,7 +9,6 @@ const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false);
     const [showPassword2, setShowPassword2] = useState(false);
-    const [isRegister, setisRegister] = useState(false);
 
     const handleRegister = async (event) => {
         event.preventDefault();
@@ -19,7 +18,6 @@ const Register = () => {
         }
         try {
            await registerAPI(email, password, confirmPassword);
-           setisRegister(true)
            setErrorMessage("Please check your email and confirm !")
         } catch (error) {
             if (error.response.status === 400) {

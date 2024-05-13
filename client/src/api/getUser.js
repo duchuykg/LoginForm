@@ -1,13 +1,16 @@
 import axios from "axios";
 import { LINK_SERVER } from "../constant";
 
-export const getUser = async (email) => {
+export const getUser = async (token) => {
   try {
     const response = await axios.get(`${LINK_SERVER}/userinfo`, {
-      params: { email: email },
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     });
     return response.data;
   } catch (error) {
-    throw error;
+    console.error('Error login:', error);
+    return null;
   }
 };
